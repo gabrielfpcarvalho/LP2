@@ -50,7 +50,7 @@ class ListFrame extends JFrame {
             }
         );
 
-        this.setTitle("Lista de Retangulos + Lista de Elipses");
+        this.setTitle("Lista Heterogenea de Retangulos e Elipses");
         this.setSize(350, 350);
     }
 
