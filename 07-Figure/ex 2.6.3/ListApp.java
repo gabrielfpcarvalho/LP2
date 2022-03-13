@@ -46,19 +46,11 @@ class ListFrame extends JFrame {
                         figlist.add(new Ellipse(x,y, w,h));
                         repaint();  // outer.repaint()
                     }
-                    else if (evt.getKeyChar() == 'l') {
-                        int x = rand.nextInt(350);
-                        int y = rand.nextInt(350);
-                        int x2 = rand.nextInt(350);
-                        int y2 = rand.nextInt(350);
-                        figlist.add(new Line(x,y, x2,y2));
-                        repaint();
-                    }
                 }
             }
         );
 
-        this.setTitle("Lista Heterogenea de Retengulos, Elipses e Linhas");
+        this.setTitle("Lista Heterogenea de Retengulos e Elipses");
         this.setSize(350, 350);
     }
 
