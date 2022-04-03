@@ -29,4 +29,5 @@
 * São 4 figuras possíveis de ser criadas (retângulo, elipse, linha vertical e linha horizontal);
 * As figuras têm tamanho mínimo de 25 pixeis e tamanho máximo de 700 pixeis (janela de tamanho: 700x700);
 * Os tamanhos das linhas são somente alterados verticalmente ou horizontalmente;
-* Figura em foco tem um contorno vermelho de indicação.
+* Figura em foco tem um contorno vermelho de indicação;
+* As figuras têm uma cor sólida de fundo (cinza) e uma cor de contorno (preto).
