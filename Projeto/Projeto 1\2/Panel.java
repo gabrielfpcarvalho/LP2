@@ -128,7 +128,7 @@ public class Panel extends JPanel {
 
             public void keyPressed (KeyEvent evt) {
 
-                if (evt.getKeyChar() == 'q') {          //tecla 'q' altera o foco entre as figuras
+                if (evt.getKeyChar() == 'q' || evt.getKeyChar() == 'Q') {          //tecla 'q' altera o foco entre as figuras
                     if (!figlist.isEmpty()) {
                         figlist.get(figlist.size() - 1).focus = false;      //caso tenha algo na lista, tira o foco da última figura colocando o valor falso
                         figlist.get(0).focus = true;        //coloca o foco na primeira figura da lista
@@ -138,7 +138,7 @@ public class Panel extends JPanel {
                     }
                 }
 
-                else if (evt.getKeyChar() == 'r') {      //tecla r gera um retângulo
+                else if (evt.getKeyChar() == 'r' || evt.getKeyChar() == 'R') {      //tecla r gera um retângulo
                     int x = 350;
                     int y = 350;
                     int w = 80;
@@ -153,7 +153,7 @@ public class Panel extends JPanel {
                     focusfig = fig;             //figura criada é o novo foco
                 }
 
-                else if (evt.getKeyChar() == 'e') {     //tecla e gera uma elipse
+                else if (evt.getKeyChar() == 'e' || evt.getKeyChar() == 'E') {     //tecla e gera uma elipse
                     int x = 350;
                     int y = 350;
                     int w = 80;
@@ -168,7 +168,7 @@ public class Panel extends JPanel {
                     focusfig = fig;                 //figura criada é o novo foco
                 }
 
-                else if (evt.getKeyChar() == 'h') {         //tecla h gera uma linha horizontal
+                else if (evt.getKeyChar() == 'h' || evt.getKeyChar() == 'H') {         //tecla h gera uma linha horizontal
                     int x = 300;
                     int y = 350;
                     int x2 = 400;   
@@ -183,7 +183,7 @@ public class Panel extends JPanel {
                     focusfig = fig;                 //figura criada é o novo foco
                 }
 
-                else if (evt.getKeyChar() == 'v') {         // tecla v gera uma linha vertical
+                else if (evt.getKeyChar() == 'v' || evt.getKeyChar() == 'V') {         // tecla v gera uma linha vertical
                     int x = 350;
                     int y = 300;
                     int x2 = 350;    
