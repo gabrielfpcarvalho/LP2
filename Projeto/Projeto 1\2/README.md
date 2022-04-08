@@ -9,7 +9,9 @@
 * Tecla **R** gera um retângulo;
 * Tecla **V** gera um uma linha vertical;
 * Tecla **H** gera um uma linha horizontal;
-* Tecla **Q** altera o foco entre as figuras da criadas;
+* Tecla **Q** altera o foco entre as figuras criadas;
+* Tecla **F** altera a cor de fundo das figuras;
+* Tecla **C** altera a cor de contorno das figuras;
 * Tecla **DELETE/DEL** exclui a figura que está em foco;
 * Teclas **SHIFT +** aumenta o tamanho da figura em foco;
 * Teclas **SHIFT -** diminui o tamanho da figura em foco;
@@ -30,4 +32,5 @@
 * As figuras têm tamanho mínimo de 25 pixeis e tamanho máximo de 700 pixeis (janela de tamanho: 700x700);
 * Os tamanhos das linhas são somente alterados verticalmente ou horizontalmente;
 * Figura em foco tem um contorno vermelho de indicação;
-* As figuras têm uma cor sólida de fundo (cinza) e uma cor de contorno (preto).
+* As Figuras têm 12 cores diferentes que são editáveis;
+* As linhas não têm cor de fundo, apenas de contorno.
