@@ -251,7 +251,7 @@ class Panel extends JPanel {
         });
     }
 
-    void NewCursor (int i) {     //alterna entre os tipos de cursores dependendo de onde o mouse é posicionado
+    private void NewCursor (int i) {     //alterna entre os tipos de cursores dependendo de onde o mouse é posicionado
         if (i == 1) {
             super.setCursor(new Cursor(Cursor.MOVE_CURSOR));
         }
