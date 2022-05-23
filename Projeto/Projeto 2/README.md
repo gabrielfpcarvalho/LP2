@@ -29,8 +29,8 @@
 * **OBS: O cursor é alterado para indicar qual função está sendo realizada no momento.**
 * Click na figura para torná-la a figura em foco;
 * Arraste a figura para mudá-la de posição;
-* Arrastar a **borda lateral direita** da figura em foco redimensiona o comprimento;
-* Arrastar a **borda inferior** da figura em foco redimensiona a altura;
+* Arrastar a **borda lateral direita ou esquerda** da figura em foco redimensiona o comprimento;
+* Arrastar a **borda inferior ou superior** da figura em foco redimensiona a altura;
 * Arrastar o **canto inferior direito** da figura em foco redimensiona o comprimento e a altura.
 
 ### Figuras:
@@ -39,7 +39,8 @@
 * As figuras têm tamanho mínimo de 25 pixeis e tamanho máximo de 700 pixeis (janela de tamanho: 700x700);
 * Os tamanhos das linhas são somente alterados verticalmente ou horizontalmente;
 * Figura em foco tem um contorno vermelho de indicação;
-* As linhas não têm cor de contorno, apenas de fundo.
+* As linhas não têm cor de contorno, apenas de fundo;
+* as linhas só podem ter seu comprimento redimensionado.
 
 ### Cores:
 
