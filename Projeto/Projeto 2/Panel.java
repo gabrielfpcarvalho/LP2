@@ -148,57 +148,6 @@ class Panel extends JPanel {
                         focusfig = fig;                 //figura criada é o novo foco
                     }
 
-                    /*else if (focusbut.index > 3 && figlist.isEmpty()) {
-
-                        if (focusbut.index == 4) {
-                            bgcolor = Color.white;
-                        }
-
-                        else if (focusbut.index == 5) {
-                            bgcolor = Color.black;
-                        }
-
-                        else if (focusbut.index == 6) {
-                            bgcolor = Color.darkGray;
-                        }
-
-                        else if (focusbut.index == 7) {
-                            bgcolor = Color.gray;
-                        }
-
-                        else if (focusbut.index == 8) {
-                            bgcolor = Color.lightGray;
-                        }
-
-                        else if (focusbut.index == 9) {
-                            bgcolor = Color.blue;
-                        }
-
-                        else if (focusbut.index == 10) {
-                            bgcolor = Color.cyan;
-                        }
-
-                        else if (focusbut.index == 11) {
-                            bgcolor = Color.yellow;
-                        }
-
-                        else if (focusbut.index == 12) {
-                            bgcolor = Color.orange;
-                        }
-
-                        else if (focusbut.index == 13) {
-                            bgcolor = Color.red;
-                        }
-
-                        else if (focusbut.index == 14) {
-                            bgcolor = Color.pink;
-                        }
-
-                        else if (focusbut.index == 15) {
-                            bgcolor = Color.magenta;
-                        }
-                    }*/
-
                     else if (focusbut.index > 3) {
                         boolean repeat = false;
                         for (int i = 0; i < figlist.size(); i++) {
