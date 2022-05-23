@@ -16,7 +16,7 @@ class Panel extends JPanel {
     private Figure focusfig = null;
     private Buttons focusbut = null;
     private Point position = new Point();
-    private boolean dragging2, dragging3, dragging5  = false;
+    private boolean dragging2, dragging3, dragging5, dragging6, dragging7  = false;
     private Color bgcolor;
 
 
@@ -306,7 +306,7 @@ class Panel extends JPanel {
             }
 
             public void mouseReleased (MouseEvent evt) {    //quando o botão do mouse é solto o tipo do cursor é alterado
-                dragging2 = dragging3 = dragging5 = false;
+                dragging2 = dragging3 = dragging5 = dragging6 = dragging7 = false;
                 if (focusfig != null) {
                     int i = 0;
 
@@ -341,7 +341,19 @@ class Panel extends JPanel {
                     newposition.x = evt.getX(); 
                     newposition.y = evt.getY();
 
-                    if ((focusfig.cursor(position, true) == 2 && !dragging3 && !dragging5) || dragging2) {
+                    if ((focusfig.cursor(position, true) == 7 && !dragging2 && !dragging6 && !dragging3 && !dragging5) || dragging7) {
+                        focusfig.resize(7, position, newposition, false);
+                        position = newposition;
+                        dragging7 = true;
+                    }
+
+                    else if ((focusfig.cursor(position, true) == 6 && !dragging2 && !dragging3 && !dragging5) || dragging6) {
+                        focusfig.resize(6, position, newposition, false);
+                        position = newposition;
+                        dragging6 = true;
+                    }
+
+                    else if ((focusfig.cursor(position, true) == 2 && !dragging3 && !dragging5) || dragging2) {
                         focusfig.resize(2, position, newposition, false);
                         position = newposition;
                         dragging2 = true;
@@ -493,11 +505,11 @@ class Panel extends JPanel {
             super.setCursor(new Cursor(Cursor.MOVE_CURSOR));
         }
 
-        else if (i == 2) {
+        else if (i == 2 || i == 6) {
             super.setCursor(new Cursor(Cursor.E_RESIZE_CURSOR));
         }
 
-        else if (i == 3) {
+        else if (i == 3 || i == 7) {
             super.setCursor(new Cursor(Cursor.N_RESIZE_CURSOR));
         }
 
