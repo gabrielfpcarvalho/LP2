@@ -40,7 +40,7 @@
 * Os tamanhos das linhas são somente alterados verticalmente ou horizontalmente;
 * Figura em foco tem um contorno vermelho de indicação;
 * As linhas não têm cor de contorno, apenas de fundo;
-* as linhas só podem ter seu comprimento redimensionado.
+* As linhas só podem ter seu comprimento redimensionado.
 
 ### Cores:
 
