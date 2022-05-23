@@ -1,4 +1,4 @@
-<h1>PROJETO 1</h1>
+<h1>PROJETO 2</h1>
   <p>O projeto é um Editor Gráfico Vetorial.</p>
 
 ## Instruções de uso
