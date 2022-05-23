@@ -127,14 +127,25 @@ public class HorLine extends Figure {
 
 
         // aumentar/diminuir arrastando com mouse
+        //lateral direita
         else if (typedrag == 2) {
-            this.w += (NewPosition.x*2) - (LastPosition.x*2);
-            this.x -= NewPosition.x - LastPosition.x; 
+            this.w += (NewPosition.x) - (LastPosition.x);
         }
 
-        if (this.w < 25 || this.w > 700) { 
-            this.w -= (NewPosition.x*2) - (LastPosition.x*2);
-            this.x += NewPosition.x - LastPosition.x;
+        //lateral esquerda
+        else if(typedrag == 6) {
+            this.x += (NewPosition.x) - (LastPosition.x);
+            this.w -= (NewPosition.x) - (LastPosition.x);
+        }
+
+        //limitando o tamanho das imagens no resize para 25 e 700 pixeis.
+        if ((this.w < 25 || this.w > 700) && typedrag != 6) { 
+            this.w -= (NewPosition.x) - (LastPosition.x);
+        }
+
+        else if ((this.w < 25 || this.w > 700) && typedrag == 6) { 
+            this.x -= (NewPosition.x) - (LastPosition.x);
+            this.w += (NewPosition.x) - (LastPosition.x);
         }
     }
 
@@ -145,6 +156,13 @@ public class HorLine extends Figure {
             (this.y - 3 <= position.y &&
              this.y + 3 >= position.y)) {
                 return 2;
+        }
+
+        else if ((this.x + 5 >= position.x &&
+                  this.x <= position.x) &&
+                 (this.y - 3 <= position.y &&
+                  this.y + 3 >= position.y)) {
+                    return 6;
         }
 
         else if (this.area(position) && press) {

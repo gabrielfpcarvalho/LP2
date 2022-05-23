@@ -126,15 +126,27 @@ public class VertLine extends Figure {
         }
 
         // aumentar/diminuir arrastando com mouse
+        //baixo
         else if (typedrag == 3) {
-            this.h += (NewPosition.y*2) - (LastPosition.y*2);
-            this.y -= NewPosition.y - LastPosition.y; 
+            this.h += (NewPosition.y) - (LastPosition.y);
         }
 
-        if (this.h < 25 || this.h > 700) { 
-            this.h -= (NewPosition.y*2) - (LastPosition.y*2);
-            this.y += NewPosition.y - LastPosition.y;
+        //cima
+        else if(typedrag == 7) {
+            this.y += (NewPosition.y) - (LastPosition.y);
+            this.h -= (NewPosition.y) - (LastPosition.y);
         }
+
+        //limitando o tamanho das imagens no resize para 25 e 700 pixeis.
+        if ((this.h < 25 || this.h > 700) && typedrag != 7) { 
+            this.h -= (NewPosition.y) - (LastPosition.y);
+        }
+
+        else if ((this.h < 25 || this.h > 700) && typedrag == 7) { 
+            this.y -= (NewPosition.y) - (LastPosition.y);
+            this.h += (NewPosition.y) - (LastPosition.y);
+        }
+
     }
 
     public int cursor(Point position, boolean press) {
@@ -144,6 +156,13 @@ public class VertLine extends Figure {
             (this.x - 3 <= position.x &&
              this.x + 3 >= position.x)) { 
                 return 3;
+        }
+
+        else if ((this.y + 5 >= position.y &&
+                  this.y <= position.y) &&
+                 (this.x - 3 <= position.x &&
+                  this.x + 3 >= position.x)) {
+                    return 7;
         }
 
         else if (this.area(position) && press) {

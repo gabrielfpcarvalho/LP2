@@ -192,31 +192,51 @@ public class Ellipse extends Figure {
 
 
         // aumentar/diminuir arrastando com mouse
+        //lateral direita
         else if (typedrag == 2) {
-            this.w += (NewPosition.x*2) - (LastPosition.x*2);
-            this.x -= NewPosition.x - LastPosition.x; 
+            this.w += (NewPosition.x) - (LastPosition.x);
         }
 
+        //lateral esquerda
+        else if (typedrag == 6) {
+            this.x += (NewPosition.x) - (LastPosition.x);
+            this.w -= (NewPosition.x) - (LastPosition.x);
+        }
+
+        //baixo
         else if (typedrag == 3) {
-            this.h += (NewPosition.y*2) - (LastPosition.y*2);
-            this.y -= NewPosition.y - LastPosition.y;
+            this.h += (NewPosition.y) - (LastPosition.y);
         }
 
+        //cima
+        else if(typedrag == 7) {
+            this.y += (NewPosition.y) - (LastPosition.y);
+            this.h -= (NewPosition.y) - (LastPosition.y);
+        }
+
+        //canto inferior direito
         else if (typedrag == 5) {
-                    this.w += (NewPosition.x*2) - (LastPosition.x*2);
-                    this.x -= NewPosition.x - LastPosition.x;
-                    this.h += (NewPosition.y*2) - (LastPosition.y*2);
-                    this.y -= NewPosition.y - LastPosition.y;
+            this.w += (NewPosition.x) - (LastPosition.x);
+            this.h += (NewPosition.y) - (LastPosition.y);
         }
 
-        if (this.w < 25 || this.w > 700) {
-            this.w -= (NewPosition.x*2) - (LastPosition.x*2);
-            this.x += NewPosition.x - LastPosition.x;
+        //limitando o tamanho das imagens no resize para 25 e 700 pixeis.
+        if ((this.w < 25 || this.w > 700) && (typedrag != 6 && typedrag != 7)) {
+            this.w -= (NewPosition.x) - (LastPosition.x);
         }
 
-        if (this.h < 25 || this.h > 700) {
-            this.h -= (NewPosition.y*2) - (LastPosition.y*2);
-            this.y += NewPosition.y - LastPosition.y;
+        else if ((this.w < 25 || this.w > 700) && (typedrag == 6 || typedrag == 7)) {
+            this.x -= (NewPosition.x) - (LastPosition.x);
+            this.w += (NewPosition.x) - (LastPosition.x);
+        }
+
+        if ((this.h < 25 || this.h > 700) && (typedrag != 6 && typedrag != 7)) {
+            this.h -= (NewPosition.y) - (LastPosition.y);
+        }
+
+        else if ((this.h < 25 || this.h > 700) && (typedrag == 6 || typedrag == 7)) {
+            this.y -= (NewPosition.y) - (LastPosition.y);
+            this.h += (NewPosition.y) - (LastPosition.y);
         }
     }
 
@@ -224,7 +244,8 @@ public class Ellipse extends Figure {
 
         int h5 = (int) Math.round(this.h/5);    //h5 recebe 1/5 do valor de h
         int w5 = (int) Math.round(this.w/5);    //w5 recebe 1/5 do valor de w
-
+        
+        // lateral direita
         if ((this.x + this.w - 5 <= position.x &&
               this.x + this.w >= position.x) && 
              (this.y + (this.h/2) - h5 <= position.y &&
@@ -233,6 +254,16 @@ public class Ellipse extends Figure {
                 return 2;
         }
 
+        //lateral esqueda
+        else if ((this.x + 5 >= position.x &&
+                  this.x <= position.x) && 
+                 (this.y + (this.h/2) - h5 <= position.y &&
+                  this.y + (this.h/2) + h5 >= position.y)) {
+
+                    return 6;
+        }
+
+        //baixo
         else if ((this.y + this.h - 5 <= position.y &&
                    this.y + this.h >= position.y) && 
                   (this.x + (this.w/2) - w5 <= position.x &&
@@ -240,9 +271,18 @@ public class Ellipse extends Figure {
 
                        return 3;
         }
+        
+        //cima
+        else if ((this.y + 5 >= position.y &&
+                  this.y <= position.y) && 
+                 (this.x + (this.w/2) - w5 <= position.x &&
+                  this.x + (this.w/2) + w5 >= position.x)) {
+            return 7;
+        }
 
-        else if (this.x + this.w - 5 <= position.x &&
-                 this.y + this.h - 5 <= position.y &&
+        //canto inferior direito
+        else if (this.x + this.w - 4<= position.x &&
+                 this.y + this.h - 4<= position.y &&
                  this.x + this.w >= position.x &&
                  this.y + this.h >= position.y) {
                     return 5;
